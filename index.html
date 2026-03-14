@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYODHYA FREGRANCE · luxury perfume</title>
+  <!-- Fonts: elegant serif & sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #020b22 0%, #041c44 100%);
+      color: #f0f0f0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      opacity: 0;
+      animation: fadeInBody 1s ease forwards;
+    }
+    @keyframes fadeInBody { to { opacity: 1; } }
+
+    .glass {
+      background: rgba(2, 11, 34, 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    }
+
+    .glass-card {
+      background: rgba(4, 28, 68, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      border-radius: 2px;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(255, 215, 0, 0.6);
+      box-shadow: 0 20px 40px -10px #000, 0 0 0 1px rgba(255, 215, 0, 0.2) inset;
+      transform: translateY(-6px);
+    }
+
+    h1, h2, h3, h4, .logo-font {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 2.8rem;
+      font-weight: 300;
+      border-left: 3px solid #ffd700;
+      padding-left: 1.2rem;
+      margin-bottom: 2rem;
+      color: #fff8e7;
+    }
+
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      z-index: 999;
+      padding: 0.8rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(2, 8, 25, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #ffd70033;
+      box-shadow: 0 8px 25px #00000080;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .logo-area img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid #ffd700;
+      box-shadow: 0 0 15px #041c44;
+    }
+    .brand-title {
+      font-size: 1.9rem;
+      letter-spacing: 6px;
+      font-weight: 400;
+      color: #f5e9d8;
+      text-shadow: 0 2px 5px #020b22;
+    }
+    .brand-title span { font-weight: 100; color: #ffd966; }
+
+    nav ul {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    nav a {
+      color: #f0e6d8;
+      text-decoration: none;
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      font-weight: 300;
+      padding-bottom: 5px;
+      border-bottom: 1px solid transparent;
+      transition: 0.3s;
+    }
+    nav a:hover { border-bottom-color: #ffd700; color: #fff6e5; }
+
+    /* ===== FLOATING BUTTONS with icons (premium) ===== */
+    .floating-buttons {
+      position: fixed;
+      right: 24px;
+      bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 9999;
+    }
+    .floating-buttons a {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255,255,240,0.25);
+      backdrop-filter: blur(4px);
+    }
+    .floating-buttons a:hover {
+      transform: scale(1.18) translateY(-6px);
+      filter: brightness(1.2);
+      box-shadow: 0 18px 35px -5px #ffd70080;
+    }
+    .whatsapp { background: #25D366; }
+    .call { background: #1c1c1c; }
+    .email { background: #ff5722; }
+
+    /* ===== hero slider ===== */
+    .hero {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0;
+    }
+    .slider-container {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+    .slider-images {
+      display: flex;
+      width: 500%;
+      height: 100%;
+      animation: slideHero 30s infinite ease-in-out;
+    }
+    .slide {
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center 30%;
+      position: relative;
+    }
+    @keyframes slideHero {
+      0% { transform: translateX(0); }
+      16% { transform: translateX(0); }
+      20% { transform: translateX(-20%); }
+      36% { transform: translateX(-20%); }
+      40% { transform: translateX(-40%); }
+      56% { transform: translateX(-40%); }
+      60% { transform: translateX(-60%); }
+      76% { transform: translateX(-60%); }
+      80% { transform: translateX(-80%); }
+      96% { transform: translateX(-80%); }
+      100% { transform: translateX(0); }
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 30% 40%, rgba(0,0,0,0.3) 0%, #041c44cc 90%);
+      backdrop-filter: blur(2.5px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 10;
+    }
+    .hero-overlay h1 {
+      font-size: 5.5rem;
+      letter-spacing: 16px;
+      font-weight: 400;
+      color: #f8efde;
+      text-shadow: 0 5px 25px #020b22;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+    .hero-overlay .sub {
+      font-size: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: #ffdb9d;
+      letter-spacing: 4px;
+    }
+    .hero-overlay p {
+      max-width: 650px;
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      background: rgba(2, 8, 25, 0.5);
+      padding: 0.7rem 2rem;
+      backdrop-filter: blur(4px);
+      border-radius: 40px;
+      border: 1px solid #ffd96699;
+    }
+
+    /* ===== welcome owner section ===== */
+    .owner-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+    .owner-img {
+      flex: 1 1 280px;
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow: 0 30px 50px -15px #000;
+      border: 1px solid #ffd966;
+    }
+    .owner-img img { width: 100%; height: auto; display: block; filter: grayscale(20%); }
+    .owner-text {
+      flex: 2 1 400px;
+      font-size: 1.4rem;
+      font-family: 'Cormorant Garamond', serif;
+      background: rgba(4, 28, 68, 0.5);
+      backdrop-filter: blur(6px);
+      padding: 2rem;
+      border-left: 3px solid #ffd700;
+    }
+
+    /* ===== product grid ===== */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .product-card {
+      padding: 2rem 1.5rem 1.8rem;
+      text-align: center;
+      background: rgba(2, 15, 35, 0.6);
+      backdrop-filter: blur(6px);
+      border: 1px solid #ffd70033;
+    }
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 1/1.1;
+      object-fit: cover;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ffd966;
+    }
+    .product-card h3 { font-size: 2rem; margin-bottom: 0.3rem; color: #ffefcf; }
+    .product-card p { font-size: 0.9rem; letter-spacing: 1px; color: #d4c3a5; }
+
+    /* ===== gallery masonry ===== */
+    .masonry-grid {
+      column-count: 4;
+      column-gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #ffd70055;
+      background: #041c44;
+    }
+    .masonry-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 1.2s cubic-bezier(0.2, 0.9, 0.3, 1);
+    }
+    .masonry-item:hover img { transform: scale(1.08); filter: brightness(1.15); }
+    .masonry-item::after {
+      content: "";
+      position: absolute; inset: 0;
+      box-shadow: inset 0 0 40px #000000b3;
+      pointer-events: none;
+    }
+    @media (max-width: 900px) { .masonry-grid { column-count: 2; } }
+    @media (max-width: 500px) { .masonry-grid { column-count: 1; } }
+
+    /* ===== contact form ===== */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+    .inquiry-form {
+      flex: 2;
+      background: rgba(2, 11, 34, 0.7);
+      padding: 2.5rem;
+      backdrop-filter: blur(8px);
+      border: 1px solid #ffd70040;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #ffd966;
+      padding: 0.9rem 0.2rem;
+      font-size: 1rem;
+      color: #f0e2d2;
+      outline: none;
+      transition: 0.2s;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-bottom-color: #ffd700; }
+    .form-group textarea { min-height: 120px; }
+    .submit-btn {
+      background: #ffd700;
+      border: none;
+      color: #020b22;
+      font-weight: 600;
+      padding: 1rem 2.5rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    .submit-btn:hover { background: #ffed9e; box-shadow: 0 0 25px #ffd700; }
+
+    .contact-details {
+      flex: 1;
+      background: rgba(4, 28, 68, 0.5);
+      padding: 2rem;
+      border-left: 2px solid #ffd700;
+    }
+    .contact-details i { color: #ffd966; width: 30px; }
+    .map-container {
+      margin-top: 2.5rem;
+      border: 2px solid #ffd70033;
+      transition: 0.2s;
+      cursor: pointer;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .map-container:hover {
+      border-color: #ffd700;
+      box-shadow: 0 0 20px #ffd70055;
+    }
+    .map-container a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      display: block;
+    }
+
+    /* ===== LUXURY FOOTER ===== */
+    .luxury-footer {
+      background: linear-gradient(135deg, #020b22, #041c44);
+      color: white;
+      padding: 40px 0;
+      font-family: Arial, sans-serif;
+      border-top: 1px solid #ffd70033;
+    }
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .footer-box {
+      width: 220px;
+      margin: 20px;
+    }
+    .footer-box h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+    }
+    .footer-box img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 2px solid #ffd700;
+      object-fit: cover;
+    }
+    .footer-box p { margin: 6px 0; opacity: 0.9; font-size: 0.95rem; }
+    .copyright {
+      text-align: center;
+      margin-top: 30px;
+      opacity: 0.7;
+      font-size: 0.9rem;
+      border-top: 1px dashed #ffd70033;
+      padding-top: 20px;
+    }
+
+    /* page visibility */
+    .page { display: none; animation: fade 0.6s; }
+    .page.active { display: block; }
+    @keyframes fade { from { opacity:0.2; } to { opacity:1; } }
+
+    /* mobile */
+    @media (max-width: 700px) {
+      header { flex-direction: column; padding: 0.5rem 1rem; }
+      nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+      .hero-overlay h1 { font-size: 3.2rem; letter-spacing: 6px; }
+      .floating-buttons a { width: 52px; height: 52px; font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- FLOATING BUTTONS with premium icons -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/919431006906" class="whatsapp" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919431006906" class="call" title="Call"><i class="fas fa-phone-alt"></i></a>
+    <a href="mailto:rajsibgh373@gmail.com" class="email" title="Email"><i class="far fa-envelope"></i></a>
+  </div>
+
+  <!-- HEADER -->
+  <header class="glass">
+    <div class="logo-area">
+      <img src="https://i.ibb.co/QFhvsG0B/Whats-App-Image-2026-03-14-at-04-02-43-1.jpg" alt="AYODHYA FREGRANCE logo">
+      <div class="brand-title">AYODHYA <span>FREGRANCE</span></div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" data-page="home">Home</a></li>
+        <li><a href="#" data-page="about">About</a></li>
+        <li><a href="#" data-page="gallery">Gallery</a></li>
+        <li><a href="#" data-page="contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="slider-container">
+          <div class="slider-images">
+            <div class="slide" style="background-image:url('https://i.ibb.co/HTpLJKvT/Whats-App-Image-2026-03-13-at-16-33-27.jpg')"></div>
+            <div class="slide" style="background-image:url('https://i.ibb.co/5xJgXhWs/Whats-App-Image-2026-03-13-at-16-33-27-1.jpg')"></div>
+            <div class="slide" style="background-image:url('https://i.ibb.co/S4RDZmGZ/Whats-App-Image-2026-03-13-at-16-33-27-2.jpg')"></div>
+            <div class="slide" style="background-image:url('https://i.ibb.co/Ps3pY7pf/Whats-App-Image-2026-03-13-at-16-33-27-3.jpg')"></div>
+            <div class="slide" style="background-image:url('https://i.ibb.co/LhhZbMYQ/Whats-App-Image-2026-03-13-at-16-33-27-4.jpg')"></div>
+          </div>
+          <div class="hero-overlay">
+            <h1>AYODHYA FREGRANCE</h1>
+            <div class="sub">Premium Natural Perfumes</div>
+            <p>Welcome to Ayodhya Fragrance <br> A premium fragrance brand focused on natural and long-lasting perfumes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>WELCOME</h2>
+        <div class="owner-wrap">
+          <div class="owner-img">
+            <img src="https://i.ibb.co/S70HzRxp/Chat-GPT-Image-Mar-14-2026-03-39-12-AM.png" alt="Raj Kishor Singh Kushwaha">
+          </div>
+          <div class="owner-text glass-card">
+            <p>Ayodhya Fragrance ek premium fragrance brand hai jo natural aur long-lasting perfumes banane par focus karta hai.</p>
+            <p>Is brand ko Raj Kishor Singh Kushwaha ne start kiya jo Narauli, Bihar ke rahne wale hain.</p>
+            <p>Unhone fragrance creation ki professional training Fragrance and Flavour Development Centre, Kannauj, Uttar Pradesh se complete ki hai.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" style="background:#020b2240;">
+        <h2>OUR FRAGRANCES</h2>
+        <div class="product-grid">
+          <div class="product-card glass-card"><img src="https://i.ibb.co/rGqNmsYs/Whats-App-Image-2026-03-13-at-16-33-27-6.jpg" alt=""><h3>OUD ESSENCE</h3><p>Deep woody, long-lasting</p></div>
+          <div class="product-card glass-card"><img src="https://i.ibb.co/4R0BSKYc/Whats-App-Image-2026-03-13-at-16-33-28.jpg" alt=""><h3>ROSE NOIR</h3><p>Floral & sensual</p></div>
+          <div class="product-card glass-card"><img src="https://i.ibb.co/zHPwTnL6/Whats-App-Image-2026-03-13-at-16-33-28-2.jpg" alt=""><h3>MUSK BLANC</h3><p>Velvety clean skin scent</p></div>
+          <div class="product-card glass-card"><img src="https://i.ibb.co/k232J7NV/Whats-App-Image-2026-03-13-at-16-33-28-1.jpg" alt=""><h3>SANTAL NOBLE</h3><p>Creamy sandalwood</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section id="about" class="page">
+      <div class="section">
+        <h2>ABOUT US</h2>
+        <div class="owner-wrap">
+          <div class="owner-img"><img src="https://i.ibb.co/S70HzRxp/Chat-GPT-Image-Mar-14-2026-03-39-12-AM.png" alt="founder"></div>
+          <div class="owner-text glass-card">
+            <p>Ayodhya Fragrance ek passion se bana hua brand hai.</p>
+            <p>Founder Raj Kishor Singh Kushwaha ne apne perfume journey ki shuruaat ek chhote se kamre se ki thi.</p>
+            <p>Apni skills ko professional level par le jane ke liye unhone Fragrance and Flavour Development Centre, Kannauj se training li.</p>
+            <p>Aaj Ayodhya Fragrance ka goal hai logon ko premium quality fragrance experience dena.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY PAGE -->
+    <section id="gallery" class="page">
+      <div class="section">
+        <h2>PERFUME GALLERY</h2>
+        <div class="masonry-grid">
+          <div class="masonry-item"><img src="https://i.ibb.co/69h52dt/Whats-App-Image-2026-03-13-at-16-33-28-3.jpg" alt=""></div>
+          <div class="masonry-item"><img src="https://i.ibb.co/LzFy5yrW/Whats-App-Image-2026-03-13-at-16-33-28-4.jpg" alt=""></div>
+          <div class="masonry-item"><img src="https://i.ibb.co/dwt2DngJ/Whats-App-Image-2026-03-14-at-02-49-57.jpg" alt=""></div>
+          <div class="masonry-item"><img src="https://i.ibb.co/GQ12TwGH/Whats-App-Image-2026-03-14-at-02-49-57-1.jpg" alt=""></div>
+          <div class="masonry-item"><img src="https://i.ibb.co/ycWN9HGP/Whats-App-Image-2026-03-14-at-02-50-46.jpg" alt=""></div>
+          <div class="masonry-item"><img src="https://i.ibb.co/ch1SwJDy/Whats-App-Image-2026-03-14-at-02-50-45.jpg" alt=""></div>
+          <div class="masonry-item"><img src="https://i.ibb.co/84n5xhgR/Whats-App-Image-2026-03-14-at-02-50-47.jpg" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT PAGE with NARAULI, BIHAR map -->
+    <section id="contact" class="page">
+      <div class="section">
+        <h2>INQUIRY</h2>
+        <div class="contact-flex">
+          <div class="inquiry-form glass-card">
+            <form id="inquiryForm">
+              <div class="form-group"><input type="text" id="name" placeholder="Name" required></div>
+              <div class="form-group"><input type="text" id="address" placeholder="Address" required></div>
+              <div class="form-group"><input type="text" id="pincode" placeholder="Pincode" required></div>
+              <div class="form-group"><input type="tel" id="mobile" placeholder="Mobile Number" required></div>
+              <div class="form-group"><input type="email" id="email" placeholder="Email" required></div>
+              <div class="form-group"><textarea id="requirements" placeholder="Your requirements..."></textarea></div>
+              <button type="submit" class="submit-btn">SEND INQUIRY</button>
+            </form>
+          </div>
+          <div class="contact-details">
+            <p><i class="fas fa-map-marker-alt"></i> Narauli, Bihar 843119, India</p>
+            <p><i class="fas fa-phone-alt"></i> <a href="tel:+919431006906" style="color:#ffdb9d;">+91 9431006906</a></p>
+            <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/919431006906" target="_blank" style="color:#ffdb9d;">WhatsApp</a></p>
+            <p><i class="far fa-envelope"></i> rajsibgh373@gmail.com</p>
+            
+            <!-- Updated Map Container with Narauli, Bihar -->
+            <div class="map-container">
+              <iframe 
+                src="https://www.google.com/maps?q=Narauli+Bihar&output=embed"
+                width="100%" 
+                height="350" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
+            </div>
+            <!-- End Map -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="luxury-footer">
+    <div class="footer-container">
+      <div class="footer-box owner">
+        <img src="https://i.ibb.co/S70HzRxp/Chat-GPT-Image-Mar-14-2026-03-39-12-AM.png" alt="Raj Kishor">
+        <h3>Raj Kishor Singh Kushwaha</h3>
+        <p>Founder – AYODHYA FREGRANCE</p>
+        <p>📞 +91 9431006906</p>
+        <p>📧 rajsibgh373@gmail.com</p>
+      </div>
+      <div class="footer-box">
+        <h3>📍 Address</h3>
+        <p>Narauli, Bihar 843119<br>India</p>
+      </div>
+      <div class="footer-box">
+        <h3>🔗 Links</h3>
+        <p>Instagram</p>
+        <p>YouTube</p>
+        <p>IndiaMART</p>
+      </div>
+      <div class="footer-box">
+        <h3>🕘 Hours</h3>
+        <p>Mon – Sun</p>
+        <p>8:00 AM – 10:00 PM</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 AYODHYA FREGRANCE – Premium Natural Perfumes
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // page navigation
+      const pages = document.querySelectorAll('.page');
+      const navLinks = document.querySelectorAll('nav a[data-page]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('data-page');
+          pages.forEach(p => p.classList.remove('active'));
+          document.getElementById(targetId).classList.add('active');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+
+      // form submit: WhatsApp + email
+      const form = document.getElementById('inquiryForm');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const name = document.getElementById('name').value.trim();
+          const addr = document.getElementById('address').value.trim();
+          const pin = document.getElementById('pincode').value.trim();
+          const mobile = document.getElementById('mobile').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const req = document.getElementById('requirements').value.trim();
+
+          const message = `*New Ayodhya Fragrance Inquiry*%0AName: ${name}%0AAddress: ${addr}%0APincode: ${pin}%0AMobile: ${mobile}%0AEmail: ${email}%0ARequirements: ${req}`;
+          
+          window.open(`https://wa.me/919431006906?text=${message}`, '_blank');
+          window.location.href = `mailto:rajsibgh373@gmail.com?subject=Inquiry from AYODHYA FREGRANCE&body=${encodeURIComponent('Name: '+name+'\nAddress: '+addr+'\nPincode: '+pin+'\nMobile: '+mobile+'\nEmail: '+email+'\nRequirements: '+req)}`;
+          alert('Inquiry sent via WhatsApp & email.');
+          form.reset();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
